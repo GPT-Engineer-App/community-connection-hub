@@ -22,8 +22,8 @@ const Index = () => {
       <Grid templateColumns="repeat(2, 1fr)" gap={8} p={8}>
         {modules.includes("golf") && (
           <GridItem>
-            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "white" : "gray.700"} borderRadius="md" boxShadow="md">
-              <FaGolfBall size={48} />
+            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "rgba(255, 255, 255, 0.8)" : "rgba(64, 64, 64, 0.8)"} borderRadius="md" boxShadow="lg" borderWidth={1} borderColor={theme === "light" ? "gray.200" : "gray.600"}>
+              <Image src="https://example.com/golf.jpg" alt="Golf" objectFit="cover" w="100%" h={48} borderRadius="md" />
               <Heading size="lg" mt={4}>
                 Golf Course
               </Heading>
@@ -37,8 +37,8 @@ const Index = () => {
 
         {modules.includes("pool") && (
           <GridItem>
-            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "white" : "gray.700"} borderRadius="md" boxShadow="md">
-              <FaSwimmingPool size={48} />
+            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "rgba(255, 255, 255, 0.8)" : "rgba(64, 64, 64, 0.8)"} borderRadius="md" boxShadow="lg" borderWidth={1} borderColor={theme === "light" ? "gray.200" : "gray.600"}>
+              <Image src="https://example.com/pool.jpg" alt="Swimming Pool" objectFit="cover" w="100%" h={48} borderRadius="md" />
               <Heading size="lg" mt={4}>
                 Swimming Pool
               </Heading>
@@ -52,8 +52,8 @@ const Index = () => {
 
         {modules.includes("events") && (
           <GridItem>
-            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "white" : "gray.700"} borderRadius="md" boxShadow="md" cursor="pointer" onClick={onEventsOpen}>
-              <FaCalendar size={48} />
+            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "rgba(255, 255, 255, 0.8)" : "rgba(64, 64, 64, 0.8)"} borderRadius="md" boxShadow="lg" borderWidth={1} borderColor={theme === "light" ? "gray.200" : "gray.600"} cursor="pointer" onClick={onEventsOpen}>
+              <Image src="https://example.com/events.jpg" alt="Events" objectFit="cover" w="100%" h={48} borderRadius="md" />
               <Heading size="lg" mt={4}>
                 Events
               </Heading>
@@ -64,8 +64,8 @@ const Index = () => {
 
         {modules.includes("messages") && (
           <GridItem>
-            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "white" : "gray.700"} borderRadius="md" boxShadow="md" cursor="pointer" onClick={onMessagesOpen}>
-              <FaComments size={48} />
+            <Flex direction="column" align="center" p={6} bg={theme === "light" ? "rgba(255, 255, 255, 0.8)" : "rgba(64, 64, 64, 0.8)"} borderRadius="md" boxShadow="lg" borderWidth={1} borderColor={theme === "light" ? "gray.200" : "gray.600"} cursor="pointer" onClick={onMessagesOpen}>
+              <Image src="https://example.com/messages.jpg" alt="Messages" objectFit="cover" w="100%" h={48} borderRadius="md" />
               <Heading size="lg" mt={4}>
                 Messages
               </Heading>
@@ -92,7 +92,18 @@ const Index = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text mb={4}>Stay up to date with the latest community news and announcements.</Text>
-            {/* Add news feed content */}
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                Community Picnic on June 15th
+              </Heading>
+              <Text fontSize="sm">Join us for a community picnic at the park on June 15th at 12pm. Bring your own food and drinks, and let's enjoy a day of fun and games together!</Text>
+            </Box>
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                New Gym Equipment Installed
+              </Heading>
+              <Text fontSize="sm">We've just installed new state-of-the-art gym equipment in the fitness center. Come check it out and get your workout on!</Text>
+            </Box>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onNewsClose}>Close</Button>
@@ -107,7 +118,18 @@ const Index = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text mb={4}>Check out the upcoming events in our community.</Text>
-            {/* Add events calendar or list */}
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                Yoga in the Park - Every Saturday 9am
+              </Heading>
+              <Text fontSize="sm">Join us for a relaxing yoga session every Saturday morning at 9am in the community park. All levels welcome!</Text>
+            </Box>
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                Community Garage Sale - July 10th
+              </Heading>
+              <Text fontSize="sm">Clean out your closets and make some extra cash at the community garage sale on July 10th from 8am to 2pm. Register to reserve your spot!</Text>
+            </Box>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onEventsClose}>Close</Button>
@@ -122,7 +144,13 @@ const Index = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text mb={4}>Rent out common area rooms for your private events.</Text>
-            {/* Add room rental form or availability calendar */}
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                Clubhouse Room Rental
+              </Heading>
+              <Text fontSize="sm">The clubhouse room is available for rent for your private events. Check availability and submit a rental request below.</Text>
+              {}
+            </Box>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onRoomsClose}>Close</Button>
@@ -137,7 +165,18 @@ const Index = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text mb={4}>Message other residents and view the community message board.</Text>
-            {/* Add messaging component or message board */}
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                New Message from John Doe
+              </Heading>
+              <Text fontSize="sm">Hey everyone, I'm looking for recommendations for a good plumber. Anyone have someone they'd suggest? Thanks!</Text>
+            </Box>
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                Neighborhood Watch Meeting Notes
+              </Heading>
+              <Text fontSize="sm">Thanks to everyone who attended the neighborhood watch meeting last night. Here are the key points we discussed...</Text>
+            </Box>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onMessagesClose}>Close</Button>
@@ -152,7 +191,18 @@ const Index = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text mb={4}>View the directory of all residents in the community.</Text>
-            {/* Add resident directory */}
+            <Box p={4}>
+              <Heading size="md" mb={2}>
+                Resident Directory
+              </Heading>
+              <Text fontSize="sm">
+                John Doe - 123 Main St - 555-1234 - johndoe@email.com
+                <br />
+                Jane Smith - 456 Oak Ave - 555-5678 - janesmith@email.com
+                <br />
+                Bob Johnson - 789 Elm Rd - 555-9012 - bobjohnson@email.com
+              </Text>
+            </Box>
           </ModalBody>
           <ModalFooter>
             <Button onClick={onDirectoryClose}>Close</Button>
